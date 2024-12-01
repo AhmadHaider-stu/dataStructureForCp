@@ -89,7 +89,7 @@ hr{
 .nav-link{
     color :black;
 }
-@media (max-width: 768px) {
+@media (max-width: 550px) {
     body {
         padding-left: 0;
     }
