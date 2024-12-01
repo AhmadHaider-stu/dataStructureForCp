@@ -1,0 +1,98 @@
+html, body{
+    background-color: rgb(206, 206, 195);
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+}
+#main-doc{
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+}
+#main-section{
+    display: block;
+}
+#navbar{
+    display: block;
+    min-width: 290px;
+    width: 320px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: solid;
+    background-color:linen;
+}
+nav header{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+}
+section{
+    display: block;
+}
+nav ul{
+    display: block;
+    list-style: none;
+}
+nav li{
+    display: block;
+    margin-top: 3px;
+    border-top: solid;
+    border-bottom: solid;
+    margin-left: -39px;
+    text-align: center;
+}
+a{
+    font-size: 19px;
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+a:visited{
+    color: green;
+}
+header{
+    font-size: 25px;
+    color: green;
+    text-align: center;
+}
+article{
+    margin-left: 40px;
+}
+code{
+    display: block;
+    text-align: left;
+    
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+li{
+    margin-top: 6px;
+}
+hr{
+    background-color: rgb(86, 85, 85);
+    height: 2px;
+    width: 70%;
+}
+.nav-link{
+    color :antiquewhite;
+}
+@media screen and (max-width: 768px) {
+    #navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}

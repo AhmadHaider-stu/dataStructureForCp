@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure For Competitive Programming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header>Data Structure for <br> Competitive Programming</header>
+            <ul>
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#Dynamic_Arrays" class="nav-link">Dynamic Arrays</a></li>
+                <li><a href="#Set_Structures" class="nav-link">Set Structures</a></li>
+                <li><a href="#Map_Structures" class="nav-link">Map Structures</a></li>
+                <li><a href="#Deqeue" class="nav-link">Deqeue</a></li>
+                <li><a href="#Stack" class="nav-link">Stack</a></li>
+                <li><a href="#Queue" class="nav-link">Queue</a></li>
+            </ul>
+        </nav>
+        <section id="Introduction" class = "main-section">
+            <header id="Introduction">Introduction</header>
+            <article>
+                <p> A data structure is a way to store data in the memory of a computer. It is
+                    important to choose an appropriate data structure for a problem, because each
+                    data structure has its own advantages and disadvantages. <strong><ins>The important question
+                    is: which operations are efficient in the chosen data structure?</ins></strong></p>
+            </article>
+        </section>
+        <section id="Dynamic_Arrays" class = "main-section">
+            <header id="Dynamic_Arrays">Dynamic arrays</header>
+            <article>
+                <p> A dynamic array is an array whose size can be changed during the execution of
+                    the program. The most popular dynamic array in C++ is the vector structure,
+                    which can be used almost like an <a href="https://www.ibm.com/docs/en/db2/11.5?topic=types-ordinary-array-data-type" title="For more information">ordinary array</a>.
+                </p>
+                <p>
+                    The following code creates an empty vector and adds three elements to it:
+                </p>
+                    <code>
+                        vector < Datatype > vectorName;<br>
+                        vectorName.push_back(variable1);//[variable1]<br>
+                        vectorName.push_back(variable2);//[variable1,variable2] <br>
+                        vectorName.push_back(variable3);//[variable1,variable2,variable3]<br>
+                    </code>
+                    <p> After this, the elements can be accessed like in an ordinary array:</p>
+                    <code>
+                        cout << vectorName[0] << "\n"; // variable1 <br>
+                        cout << vectorName[1] << "\n"; // variable2 <br>
+                        cout << vectorName[2] << "\n"; // variable3 <br>
+                    </code>
+                    <p>The function <strong>size</strong> returns the number of elements in the vector. The following
+                        code iterates through the vector and prints all elements in it:</p>
+                        <code>
+                            for (int i = 0; i < vectorName.size(); i++) {<br>
+                                cout << vectorName[i] << "\n"; <br>
+                            } <br>
+                        </code>
+                    <p>A shorter way to iterate through a vector is as follows using <a href="https://www.w3schools.com/cpp/cpp_for_loop_foreach.asp" title="for-each tutorial">for-each loop:</a></p>
+                    <code>
+                        for (type variableName : vectorName) { <br>
+                            cout << variableName << "\n"; <br>
+                        }<br>
+                    </code>
+                    <p> The function <strong>back</strong> returns the last element in the vector, and the function
+                        <strong>pop_back</strong> removes the last element:</p>
+                        <code>
+                        vector < Datatype > vectorName;<br>
+                        vectorName.push_back(variable1);//[variable1]<br>
+                        vectorName.push_back(variable2);//[variable1,variable2] <br>
+                        vectorName.pop_back();//[variable1] <br>
+                        vectorName.push_back(variable3);//[variable1,variable3]<br>
+                        cout << vectorName.back() << "\n" ;//variable3 <br>
+                        </code>
+                        <p>The following code creates a vector with three elements:</p>
+                        <code>
+                            vector < datatype > vectorName={1,2,3};<br>
+                        </code>
+                        <p>Another way to create a vector is to give the number of elements and the
+                            initial value for each element:</p>
+                        <code>
+                            vector < datatype > vectorName(100);<br>
+                            //size 100 with initial value of that data type (most of the time we will use <strong>int or long long</strong> data type so the initial value is 0).
+                        </code>
+                        <code>
+                            vector< datatype > vectorName(10, 5);// size 10 with initial value of 5
+                        </code>
+                        <p>Some more functions used with vectors:</p>
+                        <code>
+                        <ul>
+                            <li> vectorName.reserve(vectorName.begin() , variableName.end()) – Reserve the whole vector.</li>
+                            <li> vectorName.front() – Returns a reference to the first element in the vector.</li>
+                            <li> vectorName.clear() – It is used to remove all the elements of the vector.</li>
+                            <li> vectorName.erase(specific index) – It is used to remove elements from a vector from the specified position (O(n)).</li>
+                            <li> sort(vectorName.begin(),vectorName.end()) - sorts the vector is increasing order.</li>
+                            <li> sort(vectorName.rbegin(),vectorName.rend()) - sorts the vector is decreasing order.</li>
+                        </ul>
+                        </code>
+            </article>
+        </section>
+        <hr>
+        <section id="Set_Structures" class = "main-section">
+            <header id="Set_Structures">Set Structures</header>
+            <article>
+            <p> A <strong>set</strong> is a data structure that maintains a collection of objects. The basic
+                operations of sets are element insertion, search and removal.</p>
+            <p>
+                The following code creates a set that contains integers, and shows some of the
+                operations. The function <strong>insert</strong> adds an element to the set, the function <strong>count</strong>
+                returns the number of occurrences of an element in the set, and the function
+            <strong>erase</strong> removes an element from the set: 
+            <code>
+                set < dataType > setName;<br>
+                setName.insert(variable1); <br>
+                setName.insert(variable2); <br>
+                setName.insert(variable3); <br>
+                cout << setName.count(variable1) << "\n"; //1 <br>
+                cout << setName.count(variable4) << "\n"; //0 <br>
+                setName.erase(variable1);<br>
+                setName.insert(variable4);<br>
+                cout << setName.count(variable1) << "\n"; //0 <br>
+                cout << setName.count(variable4) << "\n"; //1 <br>
+            </code>
+            </p>
+            <p>A set can be used similarly to a vector, but it is not possible to access elements using the "[ index ]" notation <strong>(you cannot directly access an element in a set).</strong> For this problem, we can use iterators (we will discuss this later).</p>
+            <p> The following code creates a set, prints the
+                number of elements in it, and then iterates through all the elements:
+                <code>
+                    set<int> setName = {2,5,6,8};<br>
+                        cout << setName.size() << "\n"; // 4 <br>
+                        for (<a title="the auto keyword allows the compiler to automatically determine the type of a variable based on its initial value.(click for more info)" href="https://www.geeksforgeeks.org/type-inference-in-c-auto-and-decltype/" target="_blank"><text style="font-size:13px">auto</style></a> x : setName) {<br>
+                        cout << x << " "; //2 5 6 8 <br>
+                        }<br>
+                </code>
+                <p>
+                    A important idea about <strong>set</strong> is that a all its elements are distinct. Thus, the function <strong>count()</strong> always returns either 0 (the element is not in the set) or 1 (the
+                    element is in the set), and the function insert never adds an element to the set if
+                    it is already there.
+                </p>
+                <code>
+                    set<int> s; <br>
+                    s.insert(5); <br>
+                    s.insert(5); <br>
+                    s.insert(5); <br>
+                    cout << s.count(5) << "\n"; // 1 <br>
+                </code>
+            </p>
+            </article>
+        </section>
+        <hr>
+
+        <section id="Map_Structures" class = "main-section">
+            <header id="Map_Structures">Map Structures</header>
+        <article>
+         <p>
+            A map is a generalized array that consists of key-value. While the keys in
+            an ordinary array are always the consecutive integers 0,1,...,n 1, where n is
+            the size of the array, the keys in a map can be of any data type and they do not
+            have to be consecutive values.
+        </p>  
+        <p>
+            The C++ standard library contains two map implementations that correspond
+            to the set implementations: map accessing elements takes O(logn) time ,while the structure unordered_map accessing elements takes O(1) time on average.
+        </p>
+        <p>
+            The following code creates a map where the keys are strings and the values
+            are integers:
+            <code>
+                map<string,int> m;<br>
+                m["monkey"] = 4;<br>
+                m["banana"] = 3;<br>
+                m["harpsichord"] = 9;<br>
+                cout << m["banana"] << "\n"; // 3 <br>
+            </code>
+        </p>
+        <p>
+            The function count checks if a key exists in a map:
+            <code>
+                if(m.count("banana")) True <br>
+                    cout <<"YES\n";//print(YES) ^_^  <br>
+                else<br>
+                    cout<<"NO\n";<br>
+            </code>
+        </p>
+        <p>
+            The following code prints all the keys and values in a map:
+            <code>
+                for (auto x : m) {<br>
+                    cout << (key)x.first << " " << (value)x.second << "\n";<br>
+                }<br>    
+            </code>
+        </p>
+    </article>
+        </section>
+        <hr>
+
+        <section id="Deque" class = "main-section">
+            <header id="Deque">Deque</header>
+        <article>
+            <p>
+                A deque is a dynamic array whose size can be efficiently changed at both ends of
+                the array. Like a vector, a deque provides the functions <strong>push_back</strong> and <strong>pop_back</strong>,
+                but it also includes the functions <strong>push_front</strong> and <strong>pop_front</strong> which are not avail
+               able in a vector, so adding and deleting at the beginning of a deque O(1), but in a vector, it is O(n).
+                A deque can be used as follows:
+                <code>
+                    deque<int> d;<br>
+                    d.push_back(5); // [5] <br>
+                    d.push_back(2); // [5,2] <br>
+                    d.push_front(3); // [3,5,2] <br>
+                    d.pop_back(); // [3,5] <br> 
+                    d.pop_front(); // [5] <br>
+                </code>
+            </p>
+            <p>
+                The internal implementation of a deque is more complex than that of a vector,
+                and for this reason, a deque is slower than a vector. Still, both adding and
+                removing elements take O(1) time on average at both ends.
+            </p>
+        </article>
+        </section>
+        <hr>
+
+        <section id="Stack" class = "main-section">
+            <header id="Stack">Stack</header>
+            <article>
+                <p>
+                    A stack is a data structure that provides two O(1) time operations: adding an
+                    element to the top, and removing an element from the top. It is only possible to
+                    access the top element of a stack.<br>
+                    (It works in <strong>LIFO</strong> system Last In First Out)
+                </p>
+                <p>    
+                    The following code shows how a stack can be used:
+                    <code>
+                        stack<int> s; <br>
+                        s.push(3); <br>
+                        s.push(2);<br>
+                        s.push(5);<br>
+                        cout << s.top(); // 5<br>
+                        s.pop();<br>
+                        cout << s.top(); // 2<br>
+                    </code>
+                </p>
+            </article>
+        </section>
+        <hr>
+
+        <section id="Queue" class = "main-section">
+            <header id="Queue">Queue</header>
+            <article>
+                <p>
+                    A queue also provides two O(1) time operations: adding an element to the end
+                    of the queue, and removing the first element in the queue. It is only possible to
+                    access the first and last element of a queue.
+                   <br>
+                    (It works in <strong>FIFO</strong> system First In First Out)
+                </p>
+                <p>
+                    The following code shows how a queue can be used:
+                    <code>
+                        queue<int> q; <br>
+                            q.push(3); <br>
+                            q.push(2); <br>
+                            q.push(5); <br>
+                            cout << q.front(); // 3 <br>
+                            q.pop(); <br>
+                            cout << q.front(); // 2 <br>
+                    </code>
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
